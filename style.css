@@ -1,33 +1,46 @@
-body {
-    margin: 0px;
-    padding: 0px;
+html {
+  font-size: 100%;
 }
 
-/*Polices, couleurs, font-size*/
-p
+body {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+#container
 {
+    max-width : 1480px;
+    margin: auto;
+    background-color: #0E3B84;
+}
+
+p, ul {
     font-family: 'Rubik', sans-serif;
     font-weight: 400;
     font-size: 1rem;
     color: white;
     line-height: 30px;
 }
-.titre-footer
-{
+ li {
+   list-style: none;
+   margin: 1rem;
+ }
+
+.footer-title{
     font-family: 'Rubik', sans-serif;
     font-weight: 500;
     color : white;
     font-size: 1.25rem;
 }
-.liste-footer
-{
+.footer-list{
     padding-left: 0px;
     line-height: 2.5;
     list-style: none;
     line-height: 30px;
     color : white;
 }
-.liste-footer>li>a
+.footer-list>li>a
 {
     text-decoration: none;
     font-family: 'Rubik', sans-serif;
@@ -37,23 +50,13 @@ p
     line-height: 2.5;
     padding: 0.8rem;
 }
-/*marges, largeurs*/
-body
-{ 
-    margin :0 auto;
-}
-#container
-{
-    max-width : 1480px;
-    margin: auto;
-    background-color: #0E3B84;
-}
+
 .bg-color
 {
     background-color:rgba(0, 0, 0, 0.1);
     width : 100%;
 }
-#lower
+#bikini-bottom
 {
     font-size: 0.7rem;
     width: 80%;
@@ -65,16 +68,15 @@ body
     flex-wrap: wrap;
 }
 
-/*flex,*/
 
-.alignement-reseau
+.social-align
 {
     display: flex;
     justify-content: baseline;
     align-items: center;
     flex-wrap: wrap;  
 }
-.alignement-lower
+.align
 {
     display: flex;
     justify-content: right;
@@ -82,13 +84,16 @@ body
     flex-wrap: wrap; 
     flex-direction: row;  
 }
-.alignement-lower>p
+.align>p
 {
     padding: 10px;
 }
 
-/*Particularités*/
-.bloc-reseau
+.d-flex {
+  display: flex;
+}
+
+.social
 {
     height: 45px;
     width: 45px; 
@@ -98,23 +103,8 @@ body
     background-repeat: no-repeat;
     background-position: center;
 }
-.fb-icon
-{
-    background-image: url(media/facebook.png);
-}
-.twitter-icon
-{
-    background-image: url(media/twitter.png);
-}
-.p-icon
-{
-    background-image: url(media/pinterest.png);
-}
-.dev-icon
-{
-    background-image: url(media/deviantart.png);
-}
-.bloc-reseau:hover
+
+.social:hover
 {
     height: 45px;
     width: 45px; 
@@ -135,7 +125,24 @@ body
     margin-top: 1.5rem;
     font-family: 'Rubik', sans-serif;
 }
-#bouton-submit
+
+.fb-icon
+{
+    background-image: url(img/facebook.png);
+}
+.twitter-icon
+{
+    background-image: url(img/twitter.png);
+}
+.pinterest-icon
+{
+    background-image: url(img/pinterest.png);
+}
+.deviantart-icon
+{
+    background-image: url(img/deviantart.png);
+}
+.submit
 {
     font-family: 'Rubik', sans-serif;
     padding-top: 0.8rem;
@@ -151,11 +158,112 @@ body
     margin-bottom: 2rem;
     cursor: pointer;
 }
-#bouton-submit:hover
+.submit:hover
 {
     color: black;
 }
-#mailing
+.mailing
 {
     text-align: right;
+}
+
+@media screen and (min-width:320px) and (max-width:414px)
+{
+    #container
+    {
+        max-width : 414px;
+        margin: auto;
+        background-color: #0E3B84;
+    }
+     .box-bottom {
+       flex-wrap: wrap;
+     }
+    #footer
+    {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        font-size: 0.7rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: auto;
+    }
+    #bikini-bottom
+    {
+        width: 80%;
+        margin:auto;
+        display: flex; 
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    #bikini-bottom>p, #bikini-bottom>div>p
+    {
+        margin: 0rem;
+        font-size: 0.7rem;
+        padding-top : 0px;
+    }
+    .align
+    {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        flex-wrap: wrap; 
+        flex-direction: row; 
+        padding: 0px; 
+    }
+
+    ul {
+      padding-left: 0%;
+    }
+    
+}
+
+@media screen and (min-width:415px) and (max-width:1000px)
+{
+    #container
+    {
+    max-width : 1140px;
+    margin: auto;
+    background-color: #0E3B84;
+    }
+    #footer1
+    {
+        font-size: 0.7rem;
+        display : flex;
+        flex-direction: row;
+    }
+    .box-bottom-alt, .box-bottom
+    {
+        flex : 20%;
+        padding : 3rem;
+    }
+        
+}
+@media screen and (min-width:1001px)
+{
+    .bikini-bottom-alt
+    {
+        flex : 20%;
+    }
+    #footer1
+{
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+.box-bottom
+{
+    flex : 15%; 
+}
 }
